@@ -1,7 +1,9 @@
-package commun.interfaces;
+package mcpr.hellpops_interfaces;
 
 import java.rmi.Remote;
 import java.rmi.RemoteException;
+
+
 
 public interface ITicketService extends Remote {
 

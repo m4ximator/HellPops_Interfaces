@@ -1,36 +1,39 @@
 package mcpr.hellpops_interfaces;
 
 import java.util.Date;
+import java.io.Serializable;
+import java.util.Random;
+import java.util.UUID;
 
-public class Jeton {
-	private Date dateExpiration;
-	private String valeur;
-	
-	
-	public Jeton(Date dateExpiration, String valeur) {
-		this.dateExpiration = dateExpiration;
-		this.valeur = valeur;
-	}
+public class Jeton implements Serializable {
+    private Date dateExpiration;
+    private String valeur;
 
 
-	public Date getDateExpiration() {
-		return dateExpiration;
-	}
+    public Jeton(Date dateExpiration) {
+        this.dateExpiration = dateExpiration;
+        this.valeur = UUID.randomUUID().toString();
+    }
 
 
-	public void setDateExpiration(Date dateExpiration) {
-		this.dateExpiration = dateExpiration;
-	}
+    public Date getDateExpiration() {
+        return dateExpiration;
+    }
 
 
-	public String getValeur() {
-		return valeur;
-	}
+    public void setDateExpiration(Date dateExpiration) {
+        this.dateExpiration = dateExpiration;
+    }
 
 
-	public void setValeur(String valeur) {
-		this.valeur = valeur;
-	}
-	
-	
+    public String getValeur() {
+        return valeur;
+    }
+
+
+    public void setValeur(String valeur) {
+        this.valeur = valeur;
+    }
+
+
 }
