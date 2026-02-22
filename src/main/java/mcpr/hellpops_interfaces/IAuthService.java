@@ -9,7 +9,7 @@ public interface IAuthService extends Remote {
 
 	public Jeton connexion(String username, String passwd) throws RemoteException;
 
-	public void deconnexion() throws RemoteException;
+	public void deconnexion(Jeton jeton) throws RemoteException;
 
 	public boolean estValide (Jeton jeton) throws RemoteException;
 
