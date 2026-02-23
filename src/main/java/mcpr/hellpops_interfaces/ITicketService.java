@@ -1,16 +1,18 @@
 package mcpr.hellpops_interfaces;
 
+import mcpr.helpops_serveurIncident.Incident;
+
 import java.rmi.Remote;
 import java.rmi.RemoteException;
-
+import java.util.List;
 
 
 public interface ITicketService extends Remote {
 
-	public void creerIncident() throws RemoteException;
+	String creerIncident(Jeton jeton, String categorie, String titre, String Description) throws RemoteException;
 
-	public void consulterIncident() throws RemoteException;
+	List<Incident> consulterListeIncident(Jeton jeton) throws RemoteException;
 
-	public void accesService() throws RemoteException;
+	Incident consulterIncident(Jeton jeton, int id) throws RemoteException;
 
 }

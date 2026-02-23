@@ -5,12 +5,14 @@ import java.rmi.RemoteException;
 
 public interface IAuthService extends Remote {
 
-	public void inscription(String username, String passwd) throws RemoteException;
+	void inscription(String username, String passwd) throws RemoteException;
 
-	public Jeton connexion(String username, String passwd) throws RemoteException;
+	Jeton connexion(String username, String passwd) throws RemoteException;
 
-	public void deconnexion(Jeton jeton) throws RemoteException;
+	void deconnexion(Jeton jeton) throws RemoteException;
 
-	public boolean estValide (Jeton jeton) throws RemoteException;
+	boolean estValide (Jeton jeton) throws RemoteException;
+
+	String getLoginParJeton(Jeton jeton) throws RemoteException;
 
 }
