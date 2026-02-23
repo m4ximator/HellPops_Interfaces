@@ -12,7 +12,7 @@ public interface ITicketService extends Remote {
 	String creerIncident(Jeton jeton, String categorie, String titre, String Description) throws RemoteException;
 
 	List<Incident> consulterListeIncident(Jeton jeton) throws RemoteException;
-
-	Incident consulterIncident(Jeton jeton, int id) throws RemoteException;
+	
+	String consulterIncidentDetail(Jeton jeton, int id) throws RemoteException;
 
 }
