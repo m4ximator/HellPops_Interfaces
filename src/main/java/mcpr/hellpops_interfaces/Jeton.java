@@ -2,7 +2,6 @@ package mcpr.hellpops_interfaces;
 
 import java.util.Date;
 import java.io.Serializable;
-import java.util.Random;
 import java.util.UUID;
 
 public class Jeton implements Serializable {
