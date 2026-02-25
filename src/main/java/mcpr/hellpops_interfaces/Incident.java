@@ -9,7 +9,7 @@ public class Incident implements Serializable {
     private String titre;
     private String categorie;
     private String description;
-    private final String etat;
+    private String etat;
     private final Date dateCreation;
     private final String identifiantCreateur;
 
