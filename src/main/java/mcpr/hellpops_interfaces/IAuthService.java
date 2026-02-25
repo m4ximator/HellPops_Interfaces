@@ -5,7 +5,7 @@ import java.rmi.RemoteException;
 
 public interface IAuthService extends Remote {
 
-	void inscription(String username, String passwd) throws RemoteException;
+	boolean inscription(String username, String passwd) throws RemoteException;
 
 	Jeton connexion(String username, String passwd) throws RemoteException;
 
