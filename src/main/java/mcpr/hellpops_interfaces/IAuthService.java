@@ -15,4 +15,6 @@ public interface IAuthService extends Remote {
 
 	String getLoginParJeton(Jeton jeton) throws RemoteException;
 
+	Role getRoleParJeton (Jeton jeton) throws RemoteException;
+
 }

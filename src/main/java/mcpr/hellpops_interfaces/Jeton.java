@@ -5,12 +5,16 @@ import java.io.Serializable;
 import java.util.UUID;
 
 public class Jeton implements Serializable {
-    private Date dateExpiration;
-    private String valeur;
+    private final Date dateExpiration;
+    private final String valeur;
+    private final String username;
+    private final Role role;
 
 
-    public Jeton(Date dateExpiration) {
+    public Jeton(Date dateExpiration, String username, Role role) {
         this.dateExpiration = dateExpiration;
+        this.username = username;
+        this.role = role;
         this.valeur = UUID.randomUUID().toString();
     }
 
@@ -19,19 +23,16 @@ public class Jeton implements Serializable {
         return dateExpiration;
     }
 
-
-    public void setDateExpiration(Date dateExpiration) {
-        this.dateExpiration = dateExpiration;
+    public Role getRole() {
+        return role;
     }
 
+    public String getUsername() {
+        return username;
+    }
 
     public String getValeur() {
         return valeur;
-    }
-
-
-    public void setValeur(String valeur) {
-        this.valeur = valeur;
     }
 
 
