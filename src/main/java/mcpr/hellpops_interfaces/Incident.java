@@ -23,22 +23,26 @@ public class Incident implements Serializable {
         this.titre = titre;
         this.description = description;
         this.identifiantCreateur = identifiantCreateur;
-        this.agentResponsable = "None";
+        this.agentResponsable = null;
         this.etat = OPEN;
         this.dateCreation = new Date();
     }
 
     @Override
     public String toString() {
-        return new StringBuilder()
-                .append("Ticket #").append(identifiant)
+        StringBuilder chaine = new StringBuilder();
+        chaine.append("Ticket #").append(identifiant)
                 .append(" [").append(etat).append("]")
                 .append(" - ").append(titre)
                 .append(" (").append(categorie).append(")")
-                .append("---")
-                .append(dateCreation)
-                .append(agentResponsable)
-                .toString();
+                .append(" --- ").append(dateCreation);
+
+        // On n'affiche l'agent que s'il y en a un !
+        if (agentResponsable != null) {
+            chaine.append(" --- Assigné à : ").append(agentResponsable);
+        }
+
+        return chaine.toString();
     }
 
     // méthodes getters
