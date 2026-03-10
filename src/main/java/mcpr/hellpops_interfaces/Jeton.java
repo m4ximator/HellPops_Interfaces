@@ -18,7 +18,6 @@ public class Jeton implements Serializable {
         this.valeur = UUID.randomUUID().toString();
     }
 
-
     public Date getDateExpiration() {
         return dateExpiration;
     }

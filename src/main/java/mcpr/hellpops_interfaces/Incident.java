@@ -12,6 +12,7 @@ public class Incident implements Serializable {
     private String etat;
     private final Date dateCreation;
     private final String identifiantCreateur;
+    private String agentResponsable;
 
     // état de base d'un incident (simplifie les conditions avec une constante)
     public static final String OPEN = "OPEN";
@@ -22,6 +23,7 @@ public class Incident implements Serializable {
         this.titre = titre;
         this.description = description;
         this.identifiantCreateur = identifiantCreateur;
+        this.agentResponsable = "None";
         this.etat = OPEN;
         this.dateCreation = new Date();
     }
@@ -35,6 +37,7 @@ public class Incident implements Serializable {
                 .append(" (").append(categorie).append(")")
                 .append("---")
                 .append(dateCreation)
+                .append(agentResponsable)
                 .toString();
     }
 
@@ -65,6 +68,8 @@ public class Incident implements Serializable {
         return identifiantCreateur;
     }
 
+    public String getAgentResponsable(){return agentResponsable;}
+
     // Setters pour la modif du ticket
     public void setTitre(String titre) {
         this.titre = titre;
@@ -73,6 +78,10 @@ public class Incident implements Serializable {
     public void setCategorie(String categorie) {
         this.categorie = categorie;
     }
+
+    public void setAgentResponsable(String username) {this.agentResponsable=username;}
+
+    public void setEtat(String Etat){this.etat=Etat;}
 
     public void setDescription(String description) {
         this.description = description;

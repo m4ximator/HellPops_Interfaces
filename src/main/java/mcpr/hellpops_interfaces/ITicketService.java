@@ -15,4 +15,10 @@ public interface ITicketService extends Remote {
 
 	Incident modifierIncident(Jeton jeton, int id, String categorie, String titre, String description) throws RemoteException;
 
+	String attribuerIncident(Jeton jeton, int id) throws RemoteException;
+
+	List<Incident> consulterIncidentAgent(Jeton jeton) throws RemoteException;
+
+	List<Incident> consulterIncidentEnAttente (Jeton jeton) throws RemoteException;
+
 }
