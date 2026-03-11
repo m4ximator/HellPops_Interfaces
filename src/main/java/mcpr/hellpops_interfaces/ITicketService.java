@@ -21,4 +21,6 @@ public interface ITicketService extends Remote {
 
 	List<Incident> consulterIncidentEnAttente (Jeton jeton) throws RemoteException;
 
+	List<Incident> consulterTouslesIncidents (Jeton jeton) throws RemoteException;
+
 }
