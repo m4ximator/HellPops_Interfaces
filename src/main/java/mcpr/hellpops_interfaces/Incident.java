@@ -13,9 +13,14 @@ public class Incident implements Serializable {
     private final Date dateCreation;
     private final String identifiantCreateur;
     private String agentResponsable;
+    private Date DateResolution;
+    private String MessageResolution;
 
     // état de base d'un incident (simplifie les conditions avec une constante)
     public static final String OPEN = "OPEN";
+
+    // état final du ticket lorsqu'il est résolu
+    public static final String RESOLVED = "RESOLVED";
 
     public Incident(int identifiant, String titre, String categorie, String description, String identifiantCreateur) {
         this.identifiant = identifiant;
@@ -74,6 +79,10 @@ public class Incident implements Serializable {
 
     public String getAgentResponsable(){return agentResponsable;}
 
+    public Date getDateResolution() {return DateResolution;}
+
+    public String getMessageResolution() {return MessageResolution;}
+
     // Setters pour la modif du ticket
     public void setTitre(String titre) {
         this.titre = titre;
@@ -90,4 +99,9 @@ public class Incident implements Serializable {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    public void setDateResolution(Date DateResolution) {this.DateResolution = DateResolution;}
+
+    public void setMessageResolution(String MessageResolution) {this.MessageResolution = MessageResolution;}
+
 }
