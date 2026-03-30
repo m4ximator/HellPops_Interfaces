@@ -25,6 +25,7 @@ public interface ITicketService extends Remote {
 
 	List<Incident> consulterTouslesIncidents (Jeton jeton) throws RemoteException;
 
+	String[] getStatistiques(Jeton jeton) throws RemoteException;
 
 
 }
