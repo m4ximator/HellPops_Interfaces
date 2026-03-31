@@ -1,7 +1,9 @@
 package mcpr.hellpops_interfaces;
 
 import java.io.Serializable;
+import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Locale;
 
 public class Incident implements Serializable {
 
@@ -31,15 +33,31 @@ public class Incident implements Serializable {
     @Override
     public String toString() {
         StringBuilder chaine = new StringBuilder();
+        SimpleDateFormat date_fr = new SimpleDateFormat("dd MMM yyyy", Locale.FRANCE);
         chaine.append("Ticket #").append(identifiant)
                 .append(" [").append(etat).append("]")
                 .append(" - ").append(titre)
                 .append(" (").append(categorie).append(")")
-                .append(" --- ").append(dateCreation);
+                .append(" --- Créé le : ").append(date_fr.format(dateCreation));
 
         // On n'affiche l'agent que s'il y en a un !
         if (agentResponsable != null) {
-            chaine.append(" --- Assigné à : ").append(agentResponsable);
+            chaine.append("  --- Assigné à : ").append(agentResponsable);
+        }
+
+        if (description != null) {
+            chaine.append("\n ---- Description : ").append(description);
+        }
+
+        if (etat == EtatIncident.RESOLVED) {
+            if (DateResolution != null) {
+                chaine.append("\n ---- Ticket résolu le : ").append(date_fr.format(DateResolution));
+            }
+
+            if (MessageResolution != null) {
+                chaine.append("\n ---- Message de résolution : ").append(MessageResolution);
+            }
+
         }
 
         return chaine.toString();
