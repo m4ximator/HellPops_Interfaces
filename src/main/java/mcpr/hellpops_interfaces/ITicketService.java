@@ -27,5 +27,9 @@ public interface ITicketService extends Remote {
 
 	String[] getStatistiques(Jeton jeton) throws RemoteException;
 
+	void abonnerFluxDirect(ISupervision supervision, Jeton jeton) throws RemoteException;
+
+	List<String> abonnerAvecRattrapage(ISupervision supervision, Jeton jeton) throws RemoteException;
+
 
 }
